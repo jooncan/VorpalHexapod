@@ -3261,7 +3261,9 @@ void loop() {
   } else {
     Dialmode = DIALMODE_RC;
   }
-
+  Serial.print("Dialmode:");
+  Serial.println(Dialmode);
+  
   if (Dialmode != priorDialMode && priorDialMode != -1) {
     beep(100+100*Dialmode,60);   // audio feedback that a new mode has been entered
     SuppressModesUntil = millis() + 1000; // do NOT use hexmillis here
